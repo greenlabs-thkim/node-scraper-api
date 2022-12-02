@@ -4,7 +4,7 @@ const path = require('path');
 const https = require('node:https');
 
 const scraperObject = {
-    url: `https://shopping.naver.com/home`,
+    url: `https://search.shopping.naver.com/search/all?query=&cat_id=&frm=NVSHATC`,
     async sleep(ms) {
         return new Promise((r) => setTimeout(r, ms));
     },
@@ -56,7 +56,7 @@ const scraperObject = {
         // const keyword = '대유 마이킹 250mL';
         console.log(`Navigating to ${this.url}...`);
         await page.$eval('[title="검색어 입력"]', (node, keyword) => node.value = keyword, keyword);
-        const buttonNode = await page.$('._searchInput_button_search_1n1aw');
+        const buttonNode = await page.$('[data-testid=SEARCH_BUTTON]');
         await buttonNode.click();
 
         const subFilterNode = await page.waitForSelector('.seller_filter_area');
