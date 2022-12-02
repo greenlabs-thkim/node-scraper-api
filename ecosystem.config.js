@@ -22,10 +22,10 @@ module.exports = {
     production: {
       key: './.key/woosungsw.pem',
       user: 'ubuntu',
-      host: ['43.201.78.252'],
+      host: ['54.180.115.88'],
       ref: 'origin/main',
       repo: 'https://github.com/greenlabs-thkim/node-scraper-api.git',
-      path: '/home/ubuntu/workspace/node-scraper-api',
+      path: '/home/ec2-user/workspace/node-scraper-api',
       'post-deploy': 'npm install && pm2 restart ecosystem.config.js --env production --only node-scraper-api',
     },
   },
