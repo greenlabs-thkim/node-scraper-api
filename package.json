@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/greenlabs-thkim/node-scraper-api/issues"
   },
-  "homepage": "https://github.com/greenlabs-thkim/node-scraper-api#readme"
+  "homepage": "https://github.com/greenlabs-thkim/node-scraper-api#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
