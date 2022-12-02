@@ -55,7 +55,7 @@ const scraperObject = {
         await page.goto(this.url);
         // const keyword = '대유 마이킹 250mL';
         console.log(`Navigating to ${this.url}...`);
-        await page.$eval('[title="검색어 입력"]', (node, keyword) => node.value = keyword, keyword);
+        await page.$eval('[data-testid=SEARCH_INPUT]', (node, keyword) => node.value = keyword, keyword);
         const buttonNode = await page.$('[data-testid=SEARCH_BUTTON]');
         await buttonNode.click();
 
