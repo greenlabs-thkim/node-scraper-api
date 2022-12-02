@@ -21,7 +21,7 @@ module.exports = {
   deploy: {
     production: {
       key: './.key/woosungsw.pem',
-      user: 'ubuntu',
+      user: 'ec2-user',
       host: ['54.180.115.88'],
       ref: 'origin/main',
       repo: 'https://github.com/greenlabs-thkim/node-scraper-api.git',
