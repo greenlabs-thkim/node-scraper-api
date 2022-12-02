@@ -24,7 +24,7 @@ module.exports = {
       user: 'ubuntu',
       host: ['43.201.78.252'],
       ref: 'origin/main',
-      repo: 'github.com:greenlabs-thkim/node-scraper-api.git',
+      repo: 'https://github.com/greenlabs-thkim/node-scraper-api.git',
       path: '/home/ubuntu/workspace/node-scraper-api',
       'post-deploy': 'npm install && pm2 restart ecosystem.config.js --env production --only node-scraper-api',
     },
