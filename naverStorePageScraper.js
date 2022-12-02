@@ -55,23 +55,25 @@ const scraperObject = {
         await page.goto(this.url);
         // const keyword = '대유 마이킹 250mL';
         console.log(`Navigating to ${this.url}...`);
-        await page.waitForSelector('.header_fix');
-        await page.$eval('[data-testid=SEARCH_INPUT]', (node, keyword) => node.value = keyword, keyword);
-        const buttonNode = await page.$('[data-testid=SEARCH_BUTTON]');
-        await buttonNode.click();
+        return await page.evaluate(() => document.querySelector('*').outerHTML);
 
-        const subFilterNode = await page.waitForSelector('.seller_filter_area');
-        const subTabNodeList = await subFilterNode.$$('[data-testid=SEARCH_TAB_FILTER]');
-        // 탭 가격비교로 변경
-        await subTabNodeList[1].click();
-        const itemListNode = await page.waitForSelector('.list_basis');
-        const firstItemNode = await itemListNode.$('.list_basis > div > div > li');
-        const firstItemPrice = await firstItemNode.$eval('[data-testid=SEARCH_PRODUCT_PRICE]', node => node.textContent);
-        const firstItemURL = await firstItemNode.$eval('[data-testid=SEARCH_PRODUCT]', node => node.href);
-        return {
-            price: firstItemPrice,
-            url: firstItemURL,
-        }
+        // await page.waitForSelector('.header_fix');
+        // await page.$eval('[data-testid=SEARCH_INPUT]', (node, keyword) => node.value = keyword, keyword);
+        // const buttonNode = await page.$('[data-testid=SEARCH_BUTTON]');
+        // await buttonNode.click();
+
+        // const subFilterNode = await page.waitForSelector('.seller_filter_area');
+        // const subTabNodeList = await subFilterNode.$$('[data-testid=SEARCH_TAB_FILTER]');
+        // // 탭 가격비교로 변경
+        // await subTabNodeList[1].click();
+        // const itemListNode = await page.waitForSelector('.list_basis');
+        // const firstItemNode = await itemListNode.$('.list_basis > div > div > li');
+        // const firstItemPrice = await firstItemNode.$eval('[data-testid=SEARCH_PRODUCT_PRICE]', node => node.textContent);
+        // const firstItemURL = await firstItemNode.$eval('[data-testid=SEARCH_PRODUCT]', node => node.href);
+        // return {
+        //     price: firstItemPrice,
+        //     url: firstItemURL,
+        // }
     }
 }
 
