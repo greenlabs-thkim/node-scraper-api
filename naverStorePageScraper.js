@@ -59,8 +59,8 @@ const scraperObject = {
         const buttonNode = await page.$('._searchInput_button_search_1n1aw');
         await buttonNode.click();
 
-        const subFilterNode = await page.waitForSelector('.subFilter_seller_filter__snFam');
-        const subTabNodeList = await subFilterNode.$$('[data-testid=SEARCH_TAB_FILTER]');
+        const subFilterNode = await page.waitForSelector('.seller_filter_area');
+        const subTabNodeList = await page.$$('[data-testid=SEARCH_TAB_FILTER]');
         // 탭 가격비교로 변경
         await subTabNodeList[1].click();
         const itemListNode = await page.waitForSelector('.list_basis');
